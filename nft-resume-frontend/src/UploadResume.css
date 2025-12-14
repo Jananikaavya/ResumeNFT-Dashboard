@@ -1,0 +1,27 @@
+.upload-box {
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px dashed #6a5acd;
+  border-radius: 10px;
+  background: #f9f9ff;
+}
+
+.upload-box h2 {
+  margin-bottom: 15px;
+}
+
+.upload-box input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.upload-box button {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
