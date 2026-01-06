@@ -1,219 +1,379 @@
-/* ===============================
-   GLOBAL
-   =============================== */
+css
+/* NFTDashboard.css - Production Ready Design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
 }
 
-/* ===============================
-   MAIN CONTAINER
-   =============================== */
-
-.upload-resume-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
+/* Main Dashboard Container */
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-/* ===============================
-   HEADINGS
-   =============================== */
+/* Header */
+.dashboard h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-.upload-resume-container h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+/* Connect Button */
+.connect-btn {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.connect-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+/* Upload Section */
+.upload-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.upload-section h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.upload-resume-container h3 {
-  margin: 30px 0 16px;
-  font-size: 1.4rem;
-  color: #c7d2fe;
-}
-
-/* ===============================
-   CONNECT BUTTON
-   =============================== */
-
-.upload-resume-container > button {
-  display: block;
-  margin: 30px auto;
-  padding: 14px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.upload-resume-container > button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.45);
-}
-
-/* ===============================
-   UPLOAD FORM
-   =============================== */
-
-form {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  border-radius: 16px;
-  padding: 24px;
+/* Upload Form */
+.upload-form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* INPUTS */
-
-form input[type="text"],
-form input[type="file"] {
-  background: #020617;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 10px;
-  padding: 12px;
-  color: #e5e7eb;
-  font-size: 0.9rem;
-}
-
-form input::file-selector-button {
-  background: #6366f1;
-  border: none;
-  padding: 8px 14px;
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-form input:focus {
-  outline: none;
-  border-color: #818cf8;
-}
-
-/* SUBMIT BUTTON */
-
-form button {
-  grid-column: 1 / -1;
-  padding: 14px;
+.upload-form input {
+  padding: 18px 24px;
+  border: 2px solid #e1e8ed;
+  border-radius: 16px;
   font-size: 1rem;
-  font-weight: 700;
-  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+  color: #2c3e50;
+}
+
+.upload-form input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+  background: white;
+}
+
+.upload-form input::placeholder {
+  color: #9ca3af;
+}
+
+.upload-form button {
+  grid-column: 1 / -1;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 20px;
   border: none;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #fff;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-form button:hover {
+.upload-form button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.45);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
 }
 
-/* ===============================
-   RESUME LIST
-   =============================== */
+.upload-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 
+/* Resumes Section */
+.resumes-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.resumes-section h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Resumes Grid */
+.resumes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 28px;
+}
+
+/* Resume Cards */
 .resume-card {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.95),
-    rgba(2, 6, 23, 0.95)
-  );
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  border-radius: 18px;
-  padding: 22px;
-  margin-top: 20px;
-  transition: all 0.3s ease;
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #667eea);
 }
 
 .resume-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
 }
 
-/* CARD CONTENT */
-
-.resume-card h4 {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  color: #a5b4fc;
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f4f8;
 }
 
-.resume-card p {
-  margin: 6px 0;
-  font-size: 0.9rem;
-  color: #cbd5f5;
+.card-header h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.resume-card b {
-  color: #e5e7eb;
-}
-
-/* ===============================
-   VIEW RESUME LINK
-   =============================== */
-
-.resume-card a {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  background: #6366f1;
-  color: #fff;
-  border-radius: 10px;
+.status-good {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  text-decoration: none;
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-.resume-card a:hover {
-  background: #818cf8;
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
-}
-
-/* ===============================
-   STATUS MESSAGE
-   =============================== */
-
-.upload-resume-container > p {
-  margin-top: 30px;
-  text-align: center;
+.status-warning {
+  background: linear-gradient(45deg, #FF9800, #F57C00);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #a5b4fc;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
 }
 
-/* ===============================
-   EMPTY STATE
-   =============================== */
-
-.upload-resume-container > p:empty {
-  display: none;
+/* Card Content */
+.resume-card p {
+  margin-bottom: 16px;
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* ===============================
-   RESPONSIVE
-   =============================== */
+.resume-card strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
 
-@media (max-width: 600px) {
-  .upload-resume-container {
-    padding: 24px 14px;
-  }
+/* PDF Button */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #FF5722, #E64A19);
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+  margin-top: 12px;
+}
 
-  form {
-    padding: 18px;
-  }
+.pdf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 87, 34, 0.6);
+  text-decoration: none;
+  color: white;
+}
 
-  .upload-resume-container h2 {
-    font-size: 1.8rem;
+/* No PDF */
+.no-pdf {
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: #fef2f2;
+  border-radius: 12px;
+  border-left: 4px solid #f87171;
+}
+
+/* Status Message */
+.status {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 20px 32px;
+  margin-top: 30px;
+  border-left: 6px solid #4CAF50;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty State */
+.resumes-section p:only-child {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.2rem;
+  padding: 60px 40px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 15px;
+  }
+  
+  .dashboard h1 {
+    font-size: 2rem;
+  }
+  
+  .upload-section, .resumes-section {
+    padding: 24px;
+  }
+  
+  .upload-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .resumes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-btn {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+  }
+  
+  .resume-card {
+    padding: 24px;
+  }
+  
+  .pdf-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #5a67d8, #6b46c1);
 }

@@ -1,27 +1,272 @@
+/* UploadResume.css - Perfect Match for Your JSX */
+
+/* Main Container */
 .upload-box {
-  margin: 30px 0;
-  padding: 20px;
-  border: 2px dashed #6a5acd;
-  border-radius: 10px;
-  background: #f9f9ff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
 }
 
+.upload-box:hover {
+  box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* Header */
 .upload-box h2 {
-  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
 }
 
-.upload-box input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
+.upload-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
-.upload-box button {
-  background: #6a5acd;
+/* Form Styling */
+.upload-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields */
+.upload-box input[type="file"] {
+  padding: 18px 24px;
+  border: 2px dashed #e1e8ed;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  color: #64748b;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-box input[type="file"]:hover {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.upload-box input[type="file"]::-webkit-file-upload-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px 24px;
+  border-radius: 12px;
   cursor: pointer;
-  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 16px;
+  transition: all 0.3s ease;
+}
+
+.upload-box input[type="file"]::-webkit-file-upload-button:hover {
+  background: linear-gradient(45deg, #5a67d8, #6b46c1);
+  transform: translateY(-1px);
+}
+
+/* Text Inputs */
+.upload-box input[type="text"] {
+  padding: 20px 24px;
+  border: 2px solid #e1e8ed;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  background: #fafbfc;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.upload-box input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  background: white;
+  transform: translateY(-1px);
+}
+
+.upload-box input[type="text"]:hover {
+  border-color: #cbd5e1;
+}
+
+.upload-box input[type="text"]::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Submit Button */
+.upload-box button {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  padding: 22px 40px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.upload-box button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+.upload-box button:active {
+  transform: translateY(-1px);
+}
+
+.upload-box button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(156, 163, 175, 0.3);
+}
+
+/* Status Message */
+.upload-box p {
+  margin-top: 24px;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, #10b981, #059669);
+  color: white;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  animation: statusSlide 0.4s ease;
+}
+
+.upload-box p:empty {
+  display: none;
+}
+
+@keyframes statusSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation for Status */
+.upload-box p:has-text("📤")::before,
+.upload-box p:has-text("⛓")::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: loading-rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upload-box {
+    margin: 20px;
+    padding: 32px 24px;
+  }
+  
+  .upload-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  
+  .upload-box input[type="text"] {
+    padding: 18px 20px;
+    font-size: 1rem;
+  }
+  
+  .upload-box button {
+    padding: 20px 32px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-box {
+    padding: 24px 20px;
+  }
+  
+  .upload-box input[type="file"] {
+    padding: 16px 20px;
+  }
+  
+  .upload-box button {
+    width: 100%;
+  }
+}
+
+/* Custom Scrollbar */
+.upload-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.upload-box::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.upload-box::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .upload-box input[type="text"] {
+    background: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+  }
+  
+  .upload-box input[type="text"]::placeholder {
+    color: #94a3b8;
+  }
+}
+
+/* Focus visible for accessibility */
+.upload-box input:focus-visible,
+.upload-box button:focus-visible {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
 }
